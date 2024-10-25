@@ -1,0 +1,194 @@
+/* Styles généraux */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+/* En-tête principal */
+h1 {
+    text-align: center;
+    color: #007bff;
+}
+
+ h3 {
+    text-align: center; /* Centre le texte */
+    margin-bottom: 20px; /* Ajoute un espacement en dessous du titre */
+}
+
+/* Conteneur principal */
+#root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Conteneur du tableau de bord, du quiz et des projets de recherche */
+#dashboard-container {
+    display: flex; /* Aligne les éléments horizontalement */
+    justify-content: space-between; /* Espace entre les éléments */
+    align-items: flex-start; /* Aligne les éléments en haut */
+    width: 100%; /* Occupe toute la largeur disponible */
+    padding: 20px; /* Ajoute de la marge interne */
+}
+
+/* Tableau de bord */
+#dashboard {
+    border: 1px solid #ced4da;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    margin-right: 20px; /* Espace entre le tableau de bord et le quiz */
+    flex: 1; /* Permet au tableau de bord d'occuper l'espace disponible */
+    text-align: center;
+}
+
+.indicator {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Bouton pour collecter des données */
+.small-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.small-button:hover {
+    background-color: #218838;
+}
+
+/* Quiz de programmation */
+#programming-quiz {
+    border: 1px solid #ced4da;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    margin: 0 20px; /* Espace horizontal autour du quiz */
+    flex: 1; /* Permet au quiz d'occuper l'espace disponible */
+    text-align: center;
+}
+
+/* Projets de recherche */
+#research-projects {
+    border: 1px solid #ced4da;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    margin-left: 20px; /* Espace entre le quiz et les projets de recherche */
+    width: 300px; /* Largeur fixe pour le panneau de recherche */
+    text-align: center;
+}
+
+.algorithm-button-container {
+    margin-bottom: 10px;
+}
+
+.algorithm-button-container button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.algorithm-button-container button:hover {
+    background-color: #0056b3;
+}
+
+/* Styles pour les modèles */
+#models {
+    padding: 20px; /* Espacement interne */
+    border: 1px solid #ccc; /* Bordure autour du composant */
+    border-radius: 8px; /* Coins arrondis */
+    background-color: #fff; /* Fond blanc pour le cadre */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+#models h3 {
+    text-align: center; /* Centre le texte du titre */
+    margin-bottom: 20px; /* Ajoute de l'espacement en dessous du titre */
+}
+
+.models-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px; /* Espace entre les cartes */
+}
+
+.model-card {
+    border: 1px solid #ccc; /* Bordure légère */
+    border-radius: 5px; /* Coins arrondis */
+    padding: 15px; /* Espacement interne */
+    text-align: center; /* Centrer le texte */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+.model-card h4 {
+    margin-bottom: 10px; /* Espacement sous le titre */
+}
+
+.model-card button {
+    background-color: #007bff; /* Couleur du bouton */
+    color: white; /* Couleur du texte du bouton */
+    border: none; /* Pas de bordure */
+    padding: 10px 15px; /* Espacement interne du bouton */
+    border-radius: 5px; /* Coins arrondis du bouton */
+    cursor: pointer; /* Curseur de pointeur pour le bouton */
+}
+
+.model-card button:hover {
+    background-color: #0056b3; /* Couleur du bouton au survol */
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+    #dashboard-container,
+    #dashboard,
+    #programming-quiz,
+    #research-projects {
+        flex-direction: column; /* Empile les éléments sur les petits écrans */
+        width: 100%; /* Occupe toute la largeur disponible */
+    }
+}
+
+
+/* Convolution puzzles */
+.convolution-puzzle {
+	max-width: 200px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.convolution-puzzle__header {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #007bff;
+}
+
+.convolution-puzzle__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+}
+
+.convolution-puzzle__item {
+    padding: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    text-align: center;
+}
+
