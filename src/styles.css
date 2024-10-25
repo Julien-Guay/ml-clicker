@@ -5,6 +5,7 @@ body {
     margin: 0;
     padding: 20px;
     color: #333;
+    width: 100%; 
 }
 
 /* En-tête principal */
@@ -23,25 +24,41 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex-grow: 1;
+    width: 100%; 
 }
 
-/* Conteneur du tableau de bord, du quiz et des projets de recherche */
+/* Conteneur du tableau de bord et des projets de recherche */
 #dashboard-container {
     display: flex; /* Aligne les éléments horizontalement */
     justify-content: space-between; /* Espace entre les éléments */
     align-items: flex-start; /* Aligne les éléments en haut */
     width: 100%; /* Occupe toute la largeur disponible */
     padding: 20px; /* Ajoute de la marge interne */
+    flex-grow: 1;
 }
+
+
+#models-resources-container {
+    display: flex; /* Aligne les éléments horizontalement */
+    justify-content: space-between; /* Espace entre les éléments */
+    align-items: flex-start; /* Aligne les éléments en haut */
+    width: 100%; /* Occupe toute la largeur disponible */
+    padding: 20px; /* Ajoute de la marge interne */
+    flex: 1;
+    flex-grow: 1;
+}
+
 
 /* Tableau de bord */
 #dashboard {
+    width: 100%;
     border: 1px solid #ced4da;
     padding: 20px;
     border-radius: 8px;
     background-color: #ffffff;
     margin-right: 20px; /* Espace entre le tableau de bord et le quiz */
-    flex: 1; /* Permet au tableau de bord d'occuper l'espace disponible */
+    flex-grow: 1; /* Permet au tableau de bord d'occuper l'espace disponible */
     text-align: center;
 }
 
@@ -79,11 +96,12 @@ h1 {
 /* Projets de recherche */
 #research-projects {
     border: 1px solid #ced4da;
+    width: 100%; /* Occupe toute la largeur disponible */
     padding: 20px;
     border-radius: 8px;
     background-color: #ffffff;
     margin-left: 20px; /* Espace entre le quiz et les projets de recherche */
-    width: 300px; /* Largeur fixe pour le panneau de recherche */
+    flex-grow: 1; /* Permet au panneau de recherche d'occuper tout l'espace disponible */
     text-align: center;
 }
 
@@ -104,32 +122,48 @@ h1 {
     background-color: #0056b3;
 }
 
-/* Styles pour les modèles */
-#models {
-    padding: 20px; /* Espacement interne */
+/* Style pour les Resources*/
+#resources-container {
+    padding: 10px; /* Espacement interne */
     border: 1px solid #ccc; /* Bordure autour du composant */
     border-radius: 8px; /* Coins arrondis */
     background-color: #fff; /* Fond blanc pour le cadre */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    flex-grow: 1; /* Permet au composant d'occuper tout l'espace disponible */
+}
+
+/* Styles pour les modèles */
+#models {
+    padding: 10px; /* Espacement interne */
+    border: 1px solid #ccc; /* Bordure autour du composant */
+    border-radius: 8px; /* Coins arrondis */
+    background-color: #fff; /* Fond blanc pour le cadre */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    flex-grow: 1; /* Permet au composant d'occuper tout l'espace disponible */
+    max-width: 800px; /* Largeur maximale pour le conteneur, si nécessaire */
+    margin: 0 auto; /* Centrer le conteneur si souhaité */
 }
 
 #models h3 {
     text-align: center; /* Centre le texte du titre */
-    margin-bottom: 20px; /* Ajoute de l'espacement en dessous du titre */
+    margin-bottom: 5px; /* Ajoute de l'espacement en dessous du titre */
 }
 
 .models-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px; /* Espace entre les cartes */
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); 
+    gap: 5px; /* Réduit l'espace entre les cartes */
+    width: 100%;
 }
 
 .model-card {
     border: 1px solid #ccc; /* Bordure légère */
     border-radius: 5px; /* Coins arrondis */
-    padding: 15px; /* Espacement interne */
+    padding: 5px; /* Réduit l'espacement interne */
     text-align: center; /* Centrer le texte */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    /* Vous pouvez ajouter une largeur fixe si besoin */
+    width: 100%; /* Permet aux cartes de s'adapter à leur conteneur */
 }
 
 .model-card h4 {
@@ -137,13 +171,17 @@ h1 {
 }
 
 .model-card button {
+    display: block; /* Affiche le bouton comme un bloc */
+    width: 100%; /* Permet au bouton d'occuper toute la largeur */
     background-color: #007bff; /* Couleur du bouton */
     color: white; /* Couleur du texte du bouton */
     border: none; /* Pas de bordure */
-    padding: 10px 15px; /* Espacement interne du bouton */
+    padding: 10px 15px; /* Espacement interne du bouton (ajustez comme souhaité) */
     border-radius: 5px; /* Coins arrondis du bouton */
     cursor: pointer; /* Curseur de pointeur pour le bouton */
+    margin: 5px 0; /* Espace vertical entre les boutons */
 }
+
 
 .model-card button:hover {
     background-color: #0056b3; /* Couleur du bouton au survol */

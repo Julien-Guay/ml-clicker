@@ -12,14 +12,17 @@ function App() {
     return (
         <AppProvider> {/* Ajout du AppProvider ici */}
             <div>
-                <h1>Machine Learning Tycoon</h1>
+                <h1>ML-clicker</h1>
                 <div id="dashboard-container">
                     <Dashboard />
                     <Quiz />
                     <ResearchProjects />
                 </div>
-                <Models />
-                <ResourcesContainer />
+                <div id="models-resources-container">
+                    <ResourcesContainer />
+                    <Models />
+                </div>
+                <Quiz />
 				<ConvolutionPuzzle />
                 <EventLog />
             </div>

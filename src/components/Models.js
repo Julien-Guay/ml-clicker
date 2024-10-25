@@ -62,19 +62,18 @@ function Models() {
 
     return (
         <div id="models">
-            <h3 style={{ textAlign: 'center' }}>Modèles Disponibles</h3>
+            <h3 style={{ textAlign: 'center' }}>Models</h3>
             <div className="models-grid">
                 {models.map(model => (
                     <div className="model-card" key={model.name}>
                         <h4>{model.name}</h4>
-                        <p>Coût d'entraînement: {model.cost} $</p>
-                        <p>Modèles possédés: {ownedModels[model.name]}</p>
+                        <p>Cost: {model.cost} $</p>
+                        <p>Number : {ownedModels[model.name]}</p>
                         <button onClick={() => handleTrainModel(model.name, model.cost)}>
-                            Entraîner Modèle
+                            Train model
                         </button>
                         <button 
                             onClick={() => handleShowModal(model)} 
-                            style={{ marginTop: '10px', padding: '10px', backgroundColor: '#007bff', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
                         >
                             Optimiser
                         </button>
