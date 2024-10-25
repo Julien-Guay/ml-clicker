@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ml-clicker/static/css/main.884a11d0.css",
+    "main.js": "/ml-clicker/static/js/main.e6bc35e6.js",
+    "index.html": "/ml-clicker/index.html",
+    "main.884a11d0.css.map": "/ml-clicker/static/css/main.884a11d0.css.map",
+    "main.e6bc35e6.js.map": "/ml-clicker/static/js/main.e6bc35e6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.884a11d0.css",
+    "static/js/main.e6bc35e6.js"
+  ]
+}
