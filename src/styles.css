@@ -1,22 +1,14 @@
-/* Styles généraux */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f8f9fa;
-    margin: 0;
-    padding: 20px;
+    margin: 0; 
+    padding: 0; 
     color: #333;
+    height: 100vh; 
     width: 100%; 
-}
-
-/* En-tête principal */
-h1 {
-    text-align: center;
-    color: #007bff;
-}
-
- h3 {
-    text-align: center; /* Centre le texte */
-    margin-bottom: 20px; /* Ajoute un espacement en dessous du titre */
+    display: flex; 
+    flex-direction: column; 
+    box-sizing: border-box; 
 }
 
 /* Conteneur principal */
@@ -25,43 +17,49 @@ h1 {
     flex-direction: column;
     align-items: center;
     flex-grow: 1;
+    height: 100%; 
     width: 100%; 
+}
+
+/* En-tête principal */
+h1 {
+    text-align: center;
+    color: #007bff;
+    margin: 20px 0; /* Ajout d'un espacement autour du titre */
 }
 
 /* Conteneur du tableau de bord et des projets de recherche */
 #dashboard-container {
-    display: flex; /* Aligne les éléments horizontalement */
-    justify-content: space-between; /* Espace entre les éléments */
-    align-items: flex-start; /* Aligne les éléments en haut */
-    width: 100%; /* Occupe toute la largeur disponible */
-    padding: 20px; /* Ajoute de la marge interne */
-    flex-grow: 1;
-}
-
-
-#models-resources-container {
-    display: flex; /* Aligne les éléments horizontalement */
-    justify-content: space-between; /* Espace entre les éléments */
-    align-items: flex-start; /* Aligne les éléments en haut */
-    width: 100%; /* Occupe toute la largeur disponible */
-    padding: 20px; /* Ajoute de la marge interne */
+    display: flex; 
+    justify-content: space-between; 
+    align-items: flex-start; 
+    width: 100%; 
+    padding: 20px; 
     flex: 1;
-    flex-grow: 1;
 }
 
+/* Conteneur des modèles et des ressources */
+#models-resources-container {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: flex-start; 
+    width: 100%; 
+    padding: 20px; 
+    flex: 1;
+}
 
 /* Tableau de bord */
 #dashboard {
-    width: 100%;
     border: 1px solid #ced4da;
     padding: 20px;
     border-radius: 8px;
     background-color: #ffffff;
-    margin-right: 20px; /* Espace entre le tableau de bord et le quiz */
-    flex-grow: 1; /* Permet au tableau de bord d'occuper l'espace disponible */
+    margin: 20px; 
+    flex-grow: 1; 
     text-align: center;
 }
 
+/* Styles d'indicateur */
 .indicator {
     margin-bottom: 10px;
     font-weight: bold;
@@ -88,20 +86,19 @@ h1 {
     padding: 20px;
     border-radius: 8px;
     background-color: #ffffff;
-    margin: 0 20px; /* Espace horizontal autour du quiz */
-    flex: 1; /* Permet au quiz d'occuper l'espace disponible */
+    margin: 0 20px; 
+    flex: 1; 
     text-align: center;
 }
 
 /* Projets de recherche */
 #research-projects {
     border: 1px solid #ced4da;
-    width: 100%; /* Occupe toute la largeur disponible */
     padding: 20px;
     border-radius: 8px;
     background-color: #ffffff;
-    margin-left: 20px; /* Espace entre le quiz et les projets de recherche */
-    flex-grow: 1; /* Permet au panneau de recherche d'occuper tout l'espace disponible */
+    margin: 20px; 
+    flex-grow: 1; 
     text-align: center;
 }
 
@@ -122,69 +119,66 @@ h1 {
     background-color: #0056b3;
 }
 
-/* Style pour les Resources*/
+/* Style pour les Resources */
 #resources-container {
-    padding: 10px; /* Espacement interne */
-    border: 1px solid #ccc; /* Bordure autour du composant */
-    border-radius: 8px; /* Coins arrondis */
-    background-color: #fff; /* Fond blanc pour le cadre */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
-    flex-grow: 1; /* Permet au composant d'occuper tout l'espace disponible */
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+    background-color: #fff; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    flex-grow: 1; 
+    margin: 20px; 
 }
 
 /* Styles pour les modèles */
 #models {
-    padding: 10px; /* Espacement interne */
-    border: 1px solid #ccc; /* Bordure autour du composant */
-    border-radius: 8px; /* Coins arrondis */
-    background-color: #fff; /* Fond blanc pour le cadre */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
-    flex-grow: 1; /* Permet au composant d'occuper tout l'espace disponible */
-    max-width: 800px; /* Largeur maximale pour le conteneur, si nécessaire */
-    margin: 0 auto; /* Centrer le conteneur si souhaité */
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+    background-color: #fff; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    flex-grow: 1; 
+    max-width: 800px; /* Limite la largeur maximale */
+    margin: 20px; 
 }
 
 #models h3 {
-    text-align: center; /* Centre le texte du titre */
-    margin-bottom: 5px; /* Ajoute de l'espacement en dessous du titre */
+    text-align: center; 
+    margin-bottom: 5px; 
 }
 
 .models-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); 
-    gap: 5px; /* Réduit l'espace entre les cartes */
-    width: 100%;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
+    gap: 10px; 
 }
 
 .model-card {
-    border: 1px solid #ccc; /* Bordure légère */
-    border-radius: 5px; /* Coins arrondis */
-    padding: 5px; /* Réduit l'espacement interne */
-    text-align: center; /* Centrer le texte */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
-    /* Vous pouvez ajouter une largeur fixe si besoin */
-    width: 100%; /* Permet aux cartes de s'adapter à leur conteneur */
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+    padding: 2px; 
+    text-align: center; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    margin: 20px;
 }
 
 .model-card h4 {
-    margin-bottom: 10px; /* Espacement sous le titre */
+    margin-bottom: 10px; 
 }
 
 .model-card button {
-    display: block; /* Affiche le bouton comme un bloc */
-    width: 100%; /* Permet au bouton d'occuper toute la largeur */
-    background-color: #007bff; /* Couleur du bouton */
-    color: white; /* Couleur du texte du bouton */
-    border: none; /* Pas de bordure */
-    padding: 10px 15px; /* Espacement interne du bouton (ajustez comme souhaité) */
-    border-radius: 5px; /* Coins arrondis du bouton */
-    cursor: pointer; /* Curseur de pointeur pour le bouton */
-    margin: 5px 0; /* Espace vertical entre les boutons */
+    display: block; 
+    background-color: #007bff; 
+    color: white; 
+    border: none; 
+    padding: 5px 10px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    margin: 5px auto; 
 }
 
-
 .model-card button:hover {
-    background-color: #0056b3; /* Couleur du bouton au survol */
+    background-color: #0056b3; 
 }
 
 /* Responsivité */
@@ -193,15 +187,14 @@ h1 {
     #dashboard,
     #programming-quiz,
     #research-projects {
-        flex-direction: column; /* Empile les éléments sur les petits écrans */
-        width: 100%; /* Occupe toute la largeur disponible */
+        flex-direction: column; 
+        width: 100%; 
     }
 }
 
-
 /* Convolution puzzles */
 .convolution-puzzle {
-	max-width: 200px;
+    max-width: 200px;
     background-color: #ffffff;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -232,28 +225,27 @@ h1 {
 
 /* Optimization modal */
 .modal {
-    display: none; /* Cacher le modal par défaut */
+    display: none; 
     position: fixed;
-    z-index: 1; /* S'assurer qu'il est au-dessus des autres éléments */
+    z-index: 1; 
     left: 0;
     top: 0;
-    width: 100%; /* Pleine largeur */
-    height: 100%; /* Pleine hauteur */
-    overflow: auto; /* Activer le défilement si nécessaire */
-    background-color: rgb(0, 0, 0); /* Couleur de fond noire */
-    background-color: rgba(0, 0, 0, 0.4); /* Noir transparent */
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.4); 
 }
 
 .modal.show {
-    display: block; /* Afficher le modal */
+    display: block; 
 }
 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% du haut et centré */
+    margin: 15% auto; 
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Largeur du modal */
+    width: 80%; 
 }
 
 .close {
@@ -273,4 +265,3 @@ h1 {
 .controls {
     margin-top: 20px;
 }
-

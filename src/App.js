@@ -11,11 +11,9 @@ import ConvolutionPuzzle from './components/ConvolutionPuzzle';
 function App() {
     return (
         <AppProvider> {/* Ajout du AppProvider ici */}
-            <div>
                 <h1>ML-clicker</h1>
                 <div id="dashboard-container">
                     <Dashboard />
-                    <Quiz />
                     <ResearchProjects />
                 </div>
                 <div id="models-resources-container">
@@ -25,7 +23,6 @@ function App() {
                 <Quiz />
 				<ConvolutionPuzzle />
                 <EventLog />
-            </div>
         </AppProvider>
     );
 }
