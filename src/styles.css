@@ -192,3 +192,47 @@ h1 {
     text-align: center;
 }
 
+/* Optimization modal */
+.modal {
+    display: none; /* Cacher le modal par défaut */
+    position: fixed;
+    z-index: 1; /* S'assurer qu'il est au-dessus des autres éléments */
+    left: 0;
+    top: 0;
+    width: 100%; /* Pleine largeur */
+    height: 100%; /* Pleine hauteur */
+    overflow: auto; /* Activer le défilement si nécessaire */
+    background-color: rgb(0, 0, 0); /* Couleur de fond noire */
+    background-color: rgba(0, 0, 0, 0.4); /* Noir transparent */
+}
+
+.modal.show {
+    display: block; /* Afficher le modal */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% du haut et centré */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Largeur du modal */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.controls {
+    margin-top: 20px;
+}
+

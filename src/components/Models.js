@@ -1,9 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAppContext } from '../AppContext';
+import OptimizationModal from './OptimizationModal';
 
 function Models() {
     const { ownedModels, dollars, setDollars } = useAppContext();
-    
+    const [showModal, setShowModal] = useState(false);
+    const [currentModel, setCurrentModel] = useState(null);
+    const [modelRMSE, setModelRMSE] = useState({});
+
     const models = [
         { name: 'Régression Linéaire', cost: 10 },
         { name: 'Arbre de Décision', cost: 20 },
@@ -22,21 +26,39 @@ function Models() {
     const calculateDollars = () => {
         let totalEarnings = 0;
 
-        // Parcourir les modèles possédés et calculer les gains
         for (const modelName in ownedModels) {
             const quantity = ownedModels[modelName];
             const modelCost = models.find(model => model.name === modelName)?.cost || 0;
-            totalEarnings += quantity * modelCost; // Par exemple, 1 dollar par modèle possédé
+            totalEarnings += quantity * modelCost;
         }
 
-        setDollars(prevDollars => prevDollars + totalEarnings); // Ajoute les gains aux dollars existants
+        setDollars(prevDollars => prevDollars + totalEarnings);
     };
 
     useEffect(() => {
-        const intervalId = setInterval(calculateDollars, 1000); // Met à jour toutes les 5 secondes
-
-        return () => clearInterval(intervalId); // Nettoie l'intervalle au démontage du composant
+        const intervalId = setInterval(calculateDollars, 1000);
+        return () => clearInterval(intervalId);
     }, [ownedModels]);
+
+    const handleShowModal = (model) => {
+        setCurrentModel(model);
+        setShowModal(true);
+    };
+
+    const handleCloseModal = () => {
+        setShowModal(false);
+        setCurrentModel(null);
+    };
+
+    const handleValidateRMSE = (rmse) => {
+        if (currentModel) {
+            setModelRMSE(prevRMSE => ({
+                ...prevRMSE,
+                [currentModel.name]: rmse,
+            }));
+        }
+        handleCloseModal();
+    };
 
     return (
         <div id="models">
@@ -50,9 +72,26 @@ function Models() {
                         <button onClick={() => handleTrainModel(model.name, model.cost)}>
                             Entraîner Modèle
                         </button>
+                        <button 
+                            onClick={() => handleShowModal(model)} 
+                            style={{ marginTop: '10px', padding: '10px', backgroundColor: '#007bff', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
+                        >
+                            Optimiser
+                        </button>
+                        {modelRMSE[model.name] !== undefined && (
+                            <p>RMSE Validé : {modelRMSE[model.name].toFixed(2)}</p>
+                        )}
                     </div>
                 ))}
             </div>
+            {showModal && currentModel && (
+                <OptimizationModal
+                    show={showModal}
+                    handleClose={handleCloseModal}
+                    modelName={currentModel.name}
+                    onValidate={handleValidateRMSE}
+                />
+            )}
         </div>
     );
 }
